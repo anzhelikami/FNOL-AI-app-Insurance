@@ -1,0 +1,500 @@
+{
+  "version": "v2",
+  "intents": 
+  {
+    "yes": 
+    {
+      "includes": [
+        "yes",
+        "correct",
+        "sure",
+        "absolutely",
+        "yes siree bob",
+        "right",
+        "yep",
+        "you got it",
+        "I would",
+        "yeah",
+        "that's right", 
+        "I would",
+        "I do",
+        "you can",
+        "you may"
+      ],
+      "excludes": [
+        "fuck off"
+      ]
+    },
+    "no": {
+      "includes": [
+        "no",
+        "definitely not",
+        "wrong",
+        "incorrect",
+        "I do not",
+        "I don't",
+        "I would not",
+        "I wouldn't"
+      ],
+      "excludes": [
+        "no, I want a delivery",
+        "no, I want it delivered"
+      ]
+    },
+
+    "bye": {
+      "includes": [
+        "bye",
+        "good bye",
+        "thanks bye",
+        "nevermind",
+        "forget about it",
+        "we're done",
+        "take it easy",
+        "peace out boo",
+        "peace"
+      ]
+    },
+
+  "accident": {
+    "includes": [
+      "I got into an accident",
+      "crashed my car",
+      "crashed into a tree",
+      "I just had a car accident and I want to report it. I crashed into a tree"
+    ]
+  },
+
+  "insurance": {
+    "includes": [
+      "called you",
+      "called insurance",
+      "decided to call you first"
+    ]
+  },
+
+  "authorities": {
+    "includes": [
+      "no I didn't call any authorities",
+      "no authorities",
+      "no, no authorities were contacted",
+      "didn't contact anyone" 
+    ]
+  },
+
+  "yes_witness": {
+    "includes": [
+      "yes there is a witness",
+      "there's a witness",
+      "my husband is in the car with me, he's my witness",
+      "husband who's in the car is my witness",
+      "just my husband who was in the car with me"
+    ]
+  },
+
+  "no_injured": {
+    "includes": [
+      "no one was injured",
+      "no casualties",
+      "no one got harmed",
+      "everyone is safe",
+      "all are fine and safe",
+      "safe and sound",
+      "everyone is safe and sound",
+      "there were no people injured"
+    ]
+  }
+
+
+
+},
+
+  "entities": 
+  {
+    "month":
+    {
+      "open_set": false,
+      "values": [
+        {
+          "value": "January"
+        },
+        {
+          "value": "February"
+        },
+        {
+          "value": "March"
+        },
+        {
+          "value": "April"
+        },
+        {
+          "value": "May"
+        },
+        {
+          "value": "June"
+        },
+        {
+          "value": "July"
+        },
+        {
+          "value": "August"
+        },
+        {
+          "value": "September"
+        },
+        {
+          "value": "October"
+        },
+        {
+          "value": "November"
+        },
+        {
+          "value": "December"
+        }
+      ]
+    },
+    "city": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "New York city",
+          "synonyms": ["NYC"]
+        },
+        {
+          "value": "Miami"
+        },
+        {
+          "value": "Orlando"
+        },
+        {
+          "value": "Georgetown"
+        },
+        {
+          "value": "Washington DC",
+          "synonyms": ["DC"]
+        },
+        {
+          "value": "DC"
+        },
+        {
+          "value": "Seattle"
+        },
+        {
+          "value": "Phoenix"
+        },
+        {
+          "value": "Philadelphia"
+        },
+        {
+          "value": "Houston"
+        },
+        {
+          "value": "Chicago"
+        },
+        {
+          "value": "LA",
+          "synonyms": ["Los Angeles"]
+        },
+        {
+          "value": "Las Vegas"
+        },
+        {
+          "value": "Dallas"
+        },
+        {
+          "value": "Oklahoma City"
+        },
+        {
+          "value": "San Diego"
+        },
+        {
+          "value": "San Antonio"
+        }
+      ]
+    },
+    "address": {
+      "open_set": false,
+      "values": [
+        {
+          "value": "South Street",
+          "synonyms": ["South st"]
+        },
+        {
+          "value": "Main Street",
+          "synonyms": ["Main st"]
+        },
+        {
+          "value": "Washington Avenue",
+          "synonyms": ["Washington ave"]
+        },
+        {
+          "value": "Tall Street",
+          "synonyms": ["Tall St"]
+        },
+        {
+          "value": "California Street",
+          "synonyms": ["CA Street"]
+        }
+      ]
+    },
+
+    "number_value": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "1",
+          "synonyms": ["first", "1st", "the first", "the 1st", "one"]
+        },
+        {
+          "value": "2",
+          "synonyms": ["second", "2nd", "the second", "the 2nd", "two"]
+        },
+        {
+          "value": "3",
+          "synonyms": ["third", "3rd", "the third", "the 3rd", "three"]
+        },
+        {
+          "value": "4",
+          "synonyms": ["fourth", "4th", "the fourth", "the 4th", "four"]
+        },
+        {
+          "value": "5",
+          "synonyms": ["fifth", "5th", "the fifth", "the 5th", "five"]
+        },
+        {
+          "value": "6",
+          "synonyms": ["sixth", "6th", "the sixth", "the 6th", "six"]
+        }
+      ],
+      "includes": [
+        "(July)[month] (fifth)[number_value:date]",
+        "(January)[month] (the third)[number_value:date]",
+        "March)[month] (first)[number_value:date]",
+        "the fourth)[number_value:date] of (May)[month]",
+        "(the 5th)[number_value:date] of (February)[month]"
+      ]
+    },
+    "name": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Doctor Smith",
+          "synonyms": ["Doc Smith", "Doctor Smith", "Smith, M.D.", "Smith MD"]
+        },
+        {
+          "value": "Doctor Philips",
+          "synonyms": ["Doc Philips", "Doctor Philips", "Philips, M.D.", "Philips MD"]
+        },
+        {
+          "value": "Jim Smith",
+          "synonyms": ["Jim Smith"]
+        },
+        {
+          "value": "Tony Montana",
+          "synonyms": ["Tony Montana"]
+        },
+        {
+          "value": "Jill Jones",
+          "synonyms": ["Jill Jones"]
+        }
+      ],
+      "includes": [
+        "My name is (Doctor Smith)[name]",
+        "My name is (Tony Montana)[name]",
+        "My name is (Jill Jones)[name]",
+        "My name is (Jim Smith)[name]",
+        "This is (Doctor Philips)[name]",
+        "This is (Jill Jones)[name]",
+        "This is (Doctor Smith)[name]",
+        "This is (Jim Smith)[name]",
+        "(Doctor Jones)[name] calling",
+        "(Jim Smith)[name] calling",
+        "(Jill Jones)[name] calling",
+        "(Doctor Philips)[name] calling"
+      ]
+    },
+
+    "licence_plate": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "ABC123",
+          "synonyms": ["A B C 1 2 3", "ABC hundred twenty three,"]
+        },
+        {
+          "value": "JJD897",
+          "synonyms": ["J J D 8 9 7", "two two two one three three seven", "two, two, two, one, three, three, seven."]
+        },
+        {
+          "value": "KOI914",
+          "synonyms": ["K O I 9 1 4", "three three four eight zero zero four", "three, three, four, eight, oh, oh, four", "three, three, four, eight, zero, zero, four"]
+        }
+      ],
+      "includes": [
+        "The licence plate number is (KOI914)[licence_plate]",
+        "licence plate is (ABC123)[licence_plate]",
+        "The number of my licence plate is (A B C 1 2 3)[licence_plate]",
+        "car licence plate is (J J G 7 8 6)[licence_plate]"
+      ]
+    },
+
+    "policy": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "716542",
+          "synonyms": ["716542", "seven, one, six, five, four, two,", "seven one six five four two"]
+        },
+        {
+          "value": "2221337",
+          "synonyms": ["2221337", "two two two one three three seven", "two, two, two, one, three, three, seven."]
+        },
+        {
+          "value": "3348004",
+          "synonyms": ["3348004", "three three four eight zero zero four", "three, three, four, eight, oh, oh, four", "three, three, four, eight, zero, zero, four"]
+        },
+        {
+          "value": "86745309",
+          "synonyms": ["86745309", "eight six seven five three zero nine", "eight six seven five three oh nine"]
+        }
+      ],
+      "includes": [
+        "The policy number is (716542)[policy]",
+        "(716542)[policy]",
+        "The number is (716542)[policy]",
+        "The policy number is (86745309)[policy]",
+        "(86745309)[policy]",
+        "The number is (86745309)[policy]",
+        "The policy number is (3348004)[policy]",
+        "(3348004)[policy]",
+        "The number is (3348004)[policy]",
+        "The policy number is (2221337)[policy]",
+        "(2221337)[policy]",
+        "(73417)[policy]",
+        "(3348004)[policy]",
+        "(2221337)[policy]",
+        "The number is (2221337)[policy]",
+        "It's (2221337)[policy]",
+        "It's (3348004)[policy]",
+        "It's (86745309)[policy]"
+      ]
+    },
+
+    "email": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "husband at gmail dot com",
+          "synonyms": ["husband@gmail.com"]
+
+        },
+        {
+          "value": "luna at yahoo dot com",
+          "synonyms": ["luna@yahoo.com"]
+        },
+        {
+          "value": "abcd at bing dot com",
+          "synonyms": ["abcd@bing.com"]
+        },
+        {
+          "value": "email dash mine at gmail dot com",
+          "synonyms": ["email-mine@gmail.com"]
+        }
+      ],
+      "includes": [
+        "email is (husband@gmail.com)[email]",
+        "(dog dash cat at gmail dot com)[email]",
+        "The email is (cat at gmail dot com)[email]"
+      ]
+    },
+
+    "car_make": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Toyota"
+        },
+        {
+          "value": "Ford"
+        },
+        {
+          "value": "Lexus"
+        },
+        {
+          "value": "Honda"
+        }
+      ]
+    },
+
+    "damage_car": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "damage to the front bumper"
+        },
+        {
+          "value": "hood got crashed"
+        },
+        {
+          "value": "left side front window is crashed"
+        },
+        {
+          "value": "both front wheels are broken"
+        }
+      ]
+    },
+    
+    "car_model": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "RAV4"
+        },
+        {
+          "value": "Highlander"
+        },
+        {
+          "value": "Focus"
+        },
+        {
+          "value": "Civic"
+        }
+      ]
+    },
+    
+    "car_year": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "2000",
+          "synonyms": ["two thousand", "two k"]
+        },
+        {
+          "value": "2011",
+          "synonyms": ["twenty eleven", "two thousand eleven"]
+        },
+        {
+          "value": "2020",
+          "synonyms": ["20 20", "twenty twenty", "two thousand twenty"]
+        },
+        {
+          "value": "2021",
+          "synonyms": ["twenty twenty one", "two thousand twenty one"]
+        },
+        {
+          "value": "2019",
+          "synonyms": ["twenty nineteen", "two thousand nineteen"]
+        }
+      ]
+    }
+  }
+}
